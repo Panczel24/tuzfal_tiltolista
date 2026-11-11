@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>UjHiba</title>
+</head>
+
+<body>
+    <a href="/">index</a>
+    <br>
+    <form method="post">
+        <input type="number" name="priority" placeholder="priority">
+        <input type="text" name="mac" placeholder="mac">
+        <input type="checkbox" name="enabled" placeholder="enabled">
+        <button type="submit">Új hiba</button>
+    </form>
+
+    <% if (locals.error) { %>
+        <p>
+            <%=error%>
+        </p>
+        <% } %>
+
+            <% if (locals.hiba) { %>
+                <h2>Siker</h2>
+                <p>Id: <%= hiba.id %>
+                </p>
+                <p>Priority: <%= hiba.priority %>
+                </p>
+                <p>Mac: <%= hiba.mac %>
+                </p>
+                <p>enabled: <%= hiba.enabled %>
+                </p>
+                <% } %>
+
+
+</body>
+
+</html>
